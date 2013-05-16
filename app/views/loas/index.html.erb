@@ -1,0 +1,29 @@
+<h1>Listing loas</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Carrier</th>
+    <th>Effective date</th>
+    <th>Expiration date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loas.each do |loa| %>
+  <tr>
+    <td><%= loa.company_id %></td>
+    <td><%= loa.carrier_id %></td>
+    <td><%= loa.effective_date %></td>
+    <td><%= loa.expiration_date %></td>
+    <td><%= link_to 'Show', loa %></td>
+    <td><%= link_to 'Edit', edit_loa_path(loa) %></td>
+    <td><%= link_to 'Destroy', loa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Loa', new_loa_path %>

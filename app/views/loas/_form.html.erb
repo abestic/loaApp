@@ -1,0 +1,33 @@
+<%= form_for(@loa) do |f| %>
+  <% if @loa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loa.errors.count, "error") %> prohibited this loa from being saved:</h2>
+
+      <ul>
+      <% @loa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_id %><br />
+    <%= select(:loa, :company_id, Client.all.collect {|c| [c.name, c.id]}, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :carrier_id %><br />
+    <%= select(:loa, :carrier_id, Carrier.all.collect {|c| [c.name, c.id]}, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :effective_date %><br />
+    <%= f.date_select :effective_date %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %><br />
+    <%= f.date_select :expiration_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

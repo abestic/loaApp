@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @loa.company_id %>
+</p>
+
+<p>
+  <b>Carrier:</b>
+  <%= @loa.carrier_id %>
+</p>
+
+<p>
+  <b>Effective date:</b>
+  <%= @loa.effective_date %>
+</p>
+
+<p>
+  <b>Expiration date:</b>
+  <%= @loa.expiration_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_loa_path(@loa) %> |
+<%= link_to 'Back', loas_path %>
