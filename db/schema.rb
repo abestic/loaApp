@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516194603) do
+ActiveRecord::Schema.define(:version => 20130517141744) do
 
   create_table "carriers", :force => true do |t|
     t.string   "code"
@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(:version => 20130516194603) do
   end
 
   create_table "loas", :force => true do |t|
-    t.integer  "company_id"
     t.integer  "carrier_id"
     t.date     "effective_date"
     t.date     "expiration_date"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "client_id"
   end
 
   create_table "states", :force => true do |t|

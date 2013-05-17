@@ -6,9 +6,11 @@ LoaApp::Application.routes.draw do
 
 
   resources :loas
+  
 
-
-  resources :clients
+  resources :clients do
+    resources :loas
+  end
 
 
   # The priority is based upon order of creation:

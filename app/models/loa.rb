@@ -1,5 +1,5 @@
 class Loa < ActiveRecord::Base
-  attr_accessible :carrier_id, :company_id, :effective_date, :expiration_date
+  attr_accessible :carrier_id, :client_id, :effective_date, :expiration_date
 
   belongs_to :client
   has_one :carrier 

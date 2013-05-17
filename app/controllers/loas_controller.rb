@@ -2,8 +2,8 @@ class LoasController < ApplicationController
   # GET /loas
   # GET /loas.json
   def index
-    @loas = Loa.all
-    @exp = Loa.expired
+    @client = Client.find(params[:client_id])
+    @loas = @client.loas
 
     respond_to do |format|
       format.html # index.html.erb
