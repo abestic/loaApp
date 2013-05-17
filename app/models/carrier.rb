@@ -3,4 +3,6 @@ class Carrier < ActiveRecord::Base
 
   has_many :loas
 
+  scope :current, where(:active => true)
+  
 end

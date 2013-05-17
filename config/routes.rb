@@ -1,15 +1,12 @@
 LoaApp::Application.routes.draw do
-  resources :contacts
-
 
   resources :carriers
 
-
-  resources :loas
   
-
+  
   resources :clients do
     resources :loas
+    resources :contacts
   end
 
 

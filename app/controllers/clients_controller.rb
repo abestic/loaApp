@@ -1,8 +1,16 @@
 class ClientsController < ApplicationController
+  
+  before_filter :get_contact
+
+  def get_contact
+    @contacts = Contact.current
+  end
+
   # GET /clients
   # GET /clients.json
   def index
     @clients = Client.all
+
 
     respond_to do |format|
       format.html # index.html.erb

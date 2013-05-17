@@ -4,7 +4,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.boolean :active
+      t.integer :client_id
 
       t.timestamps
     end

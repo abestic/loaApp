@@ -1,4 +1,4 @@
-<h1>Listing clients</h1>
+<h1>Listing Clients</h1>
 
 <table>
   <tr>
@@ -7,9 +7,8 @@
     <th>Address 2</th>
     <th>City</th>
     <th>State</th>
-    <th>Postal code</th>
-    <th>Contact</th>
-    <th>Active</th>
+    <th>Postal Code</th>
+    <th>Active?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,7 +22,6 @@
     <td><%= client.city %></td>
     <td><%= client.state %></td>
     <td><%= client.postal_code %></td>
-    <td><%= client.contact_id %></td>
     <td><%= client.active %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>

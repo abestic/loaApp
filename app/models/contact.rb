@@ -1,6 +1,12 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :active, :email, :first_name, :last_name
+  attr_accessible :client_id, :email, :first_name, :last_name, :active
 
-  has_one :client
-  
+  belongs_to :client
+
+  def full_name
+  	"#{first_name} #{last_name}"
+  end
+
+  scope :current, where(:active => true)
+
 end

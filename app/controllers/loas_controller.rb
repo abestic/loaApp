@@ -1,9 +1,16 @@
 class LoasController < ApplicationController
+  
+  before_filter :get_client
+
+  def get_client
+    @client = Client.find(params[:client_id])
+  end
+
   # GET /loas
   # GET /loas.json
   def index
-    @client = Client.find(params[:client_id])
     @loas = @client.loas
+    @carriers = Carrier.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,12 +48,12 @@ class LoasController < ApplicationController
   # POST /loas
   # POST /loas.json
   def create
-    @loa = Loa.new(params[:loa])
+    @loa = @client.loas.new(params[:loa])
 
     respond_to do |format|
       if @loa.save
-        format.html { redirect_to @loa, notice: 'Loa was successfully created.' }
-        format.json { render json: @loa, status: :created, location: @loa }
+        format.html { redirect_to [@client, @loa], notice: 'Loa was successfully created.' }
+        format.json { render json: [@client, @loa], status: :created, location: [@client, @loa] }
       else
         format.html { render action: "new" }
         format.json { render json: @loa.errors, status: :unprocessable_entity }
@@ -61,7 +68,7 @@ class LoasController < ApplicationController
 
     respond_to do |format|
       if @loa.update_attributes(params[:loa])
-        format.html { redirect_to @loa, notice: 'Loa was successfully updated.' }
+        format.html { redirect_to [@client, @loa], notice: 'Loa was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -29,15 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.subregion_select :state, "US" %>
+    <%= f.subregion_select :state, "US", {:prompt => true} %>
   </div>
   <div class="field">
     <%= f.label :postal_code %><br />
     <%= f.text_field :postal_code %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_id %><br />
-    <%= select(:client, :contact_id, Contact.all.collect {|c| [c.first_name, c.id]}, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :active %><br />

@@ -16,10 +16,14 @@
 </p>
 
 <p>
-  <b>Active:</b>
-  <%= @contact.active %>
+  <b>Client:</b>
+  <%= @client.name %>
 </p>
 
+<p>
+  <b>Active:</b>
+  <%= @client.active %>
+</p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Edit', edit_client_contact_path(@contact) %> |
+<%= link_to 'Back', client_contacts_path %>

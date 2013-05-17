@@ -31,8 +31,11 @@
 </p>
 
 <p>
-  <b>Contact:</b>
-  <%= @client.contact_id %>
+  <b>Contacts:</b>
+  
+  <% @contacts.each do |contact| %>
+    <%= link_to contact.full_name, client_contact_path(@client, contact) %>
+  <% end %>
 </p>
 
 <p>

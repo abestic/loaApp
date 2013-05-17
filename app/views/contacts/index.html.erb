@@ -1,11 +1,12 @@
-<h1>Listing contacts</h1>
+<h1><%= "Listing Contacts for #{@client.name}" %></h1>
 
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
+    <th>First Name</th>
+    <th>Last Name</th>
     <th>Email</th>
-    <th>Active</th>
+    <th>Client</th> <!-- REMOVE THIS LINE AFTER TESTING -->
+    <th>Active?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,14 +17,17 @@
     <td><%= contact.first_name %></td>
     <td><%= contact.last_name %></td>
     <td><%= contact.email %></td>
+    <td><%= @client.name %></td> <!-- REMOVE THIS LINE AFTER TESTING -->
     <td><%= contact.active %></td>
-    <td><%= link_to 'Show', contact %></td>
-    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-    <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', [@client, contact] %></td>
+    <td><%= link_to 'Edit', edit_client_contact_path(@client, contact) %></td>
+    <td><%= link_to 'Destroy', [@client, contact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', new_client_contact_path(@client) %>
+
+
