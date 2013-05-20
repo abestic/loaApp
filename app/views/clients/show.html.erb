@@ -32,17 +32,24 @@
 
 <p>
   <b>Contacts:</b>
-  
   <% @contacts.each do |contact| %>
     <%= link_to contact.full_name, client_contact_path(@client, contact) %>
   <% end %>
 </p>
 
 <p>
-  <b>Active:</b>
-  <%= @client.active %>
+  <b>LOAs:</b>
+  <% @loas.each do |loa| %>
+    <%= link_to loa.carrier_id, client_loa_path(@client, loa) %>
+  <% end %>
 </p>
 
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
+
+<p>
+  <b>TASKS:</b>
+  <%= link_to '[New Contact]', new_client_contact_path(@client) %>  
+  <%= link_to '[New LOA]', new_client_loa_path(@client) %>
+</p>

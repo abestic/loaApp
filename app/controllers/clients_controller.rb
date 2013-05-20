@@ -1,9 +1,16 @@
 class ClientsController < ApplicationController
   
-  before_filter :get_contact
+  before_filter :get_contact, :get_loa
+  skip_before_filter :get_contact, :get_loa, :only => [:index]
+
 
   def get_contact
-    @contacts = Contact.current
+    @client = Client.find(params[:id])
+    @contacts = @client.contacts
+  end
+
+  def get_loa
+    @loas = @client.loas
   end
 
   # GET /clients
@@ -21,7 +28,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
-    @client = Client.find(params[:id])
+    #@client = Client.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

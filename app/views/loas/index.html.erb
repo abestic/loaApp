@@ -14,7 +14,7 @@
 <% @loas.each do |loa| %>
   <tr>
     <td><%= @client.name %></td>
-    <td><%= loa.carrier_id %></td>
+    <td><%= loa.client_id %></td>
     <td><%= loa.effective_date %></td>
     <td><%= loa.expiration_date %></td>
     <td><%= link_to 'Show', [@client, loa] %></td>
