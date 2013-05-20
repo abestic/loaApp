@@ -19,9 +19,9 @@ pre {
 }
 
 a {
-  color: #000;
+  color: blue;
   &:visited {
-    color: #666;
+    color: #8822FF;
   }
   &:hover {
     color: #fff;
@@ -67,3 +67,5 @@ div {
     list-style: square;
   }
 }
+
+.inactive {color: grey;}

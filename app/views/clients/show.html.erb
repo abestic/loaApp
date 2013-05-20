@@ -26,13 +26,13 @@
 </p>
 
 <p>
-  <b>Postal code:</b>
+  <b>Postal Code:</b>
   <%= @client.postal_code %>
 </p>
 
 <p>
-  <b>Contacts:</b>
-  <% @contacts.each do |contact| %>
+  <b>Active Contacts:</b>
+  <% @contacts.current.each do |contact| %>
     <%= link_to contact.full_name, client_contact_path(@client, contact) %>
   <% end %>
 </p>
@@ -46,7 +46,10 @@
 
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Client List', clients_path %> |
+<%= link_to 'Contact List', client_contacts_path(@client) %> |
+<%= link_to 'LOA List', client_loas_path(@client) %>
 
 <p>
   <b>TASKS:</b>

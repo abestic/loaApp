@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   
   before_filter :get_contact, :get_loa
-  skip_before_filter :get_contact, :get_loa, :only => [:index]
+  skip_before_filter :get_contact, :get_loa, :only => [:index, :new, :create]
 
 
   def get_contact
@@ -17,7 +17,6 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
-
 
     respond_to do |format|
       format.html # index.html.erb
