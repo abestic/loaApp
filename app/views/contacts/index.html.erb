@@ -26,15 +26,19 @@
 <% end %>
 </table>
 
+<br />
+
+<div class="nav">
+<p>
+    <b>TASKS:</b>    
+    <%= link_to '[New Contact]', new_client_contact_path(@client) %>
+</p>
 <p>
     <b>VIEWS:</b>
     <%= link_to 'Client Details', client_path(@client) %> |
     <%= link_to 'Client List', clients_path %>
 </p>
-<p>
-    <b>TASKS:</b>    
-    <%= link_to '[New Contact]', new_client_contact_path(@client) %>
-</p>
+</div>
 
 
 

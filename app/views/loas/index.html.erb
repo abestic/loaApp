@@ -6,7 +6,7 @@
     <th>Carrier</th>
     <th>Effective Date</th>
     <th>Expiration Date</th>
-    <th>Active</th>
+    <!--<th>Active</th>-->
     <th></th>
     <th></th>
     <th></th>
@@ -18,7 +18,7 @@
     <td><%= loa.carrier_code %></td>
     <td><%= loa.effective_date %></td>
     <td><%= loa.expiration_date %></td>
-    <td><%= loa.active %></td>
+    <!--<td><%= loa.active %></td>-->
     <td><%= link_to 'Show', [@client, loa] %></td>
     <td><%= link_to 'Edit', edit_client_loa_path(@client, loa) %></td>
     <td><%= link_to 'Destroy', [@client, loa], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,13 +26,17 @@
 <% end %>
 </table>
 
+<br />
+
+<div class="nav">
 <p>
-    <b>VIEWS:</b>
-    <%= link_to 'Client Detail', client_path(@client) %>
-    <%= link_to 'Client List', clients_path %>
+  <b>TASKS:</b>
+  <%= link_to '[New Loa]', new_client_loa_path %>
 </p>
 
 <p>
-  <b>TASKS:</b>
-  <%= link_to 'New Loa', new_client_loa_path %>
+    <b>VIEWS:</b>
+    <%= link_to 'Client Detail', client_path(@client) %> |
+    <%= link_to 'Client List', clients_path %>
 </p>
+</div>

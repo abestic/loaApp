@@ -6,4 +6,6 @@ class Client < ActiveRecord::Base
 
   scope :current, where(:active => true)
 
+  validates_presence_of :name, :address_1, :city, :state, :postal_code
+
 end

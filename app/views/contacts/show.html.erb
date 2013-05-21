@@ -25,16 +25,16 @@
   <%= @client.active %>
 </p>
 
-<p>
-  <b>VIEWS:</b>
-  <%= link_to 'Contact List', client_contacts_path %> |
-  <%= link_to 'Client List', clients_path %> |
-  <%= link_to 'Client Details', client_path(@client) %>
-  
-</p>
-
+<div class="nav">
 </p>
   <b>TASKS:</b>
   <%= link_to '[Edit]', edit_client_contact_path(@client, @contact) %>
 </p>
 
+<p>
+  <b>VIEWS:</b>
+  <%= link_to 'Contact List', client_contacts_path %> |
+  <%= link_to 'Client List', clients_path %> |
+  <%= link_to 'Client Details', client_path(@client) %>
+</p>
+</div>

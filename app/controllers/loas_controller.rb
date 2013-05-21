@@ -11,10 +11,7 @@ class LoasController < ApplicationController
   # GET /loas
   # GET /loas.json
   def index
-    #@loas = @client.loas
-
-    
-
+    @loas = @loas.sort_by(&:expiration_date).reverse
 
     respond_to do |format|
       format.html # index.html.erb

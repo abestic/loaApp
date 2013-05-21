@@ -15,7 +15,7 @@
   <%= @loa.effective_date %>
 </p>
 
-<p>
+<p <% if (@loa.active? && @loa.expiration_date < Date.today) %>class="expired"<% end %>>
   <b>Expiration date:</b>
   <%= @loa.expiration_date %>
 </p>
@@ -25,8 +25,28 @@
   <%= @loa.active %>
 </p>
 
+<p>
+  <b>PDF:</b>
+  <%= link_to @loa.pdf_filename, @loa.pdf_url.to_s %>
+</p>
 
-<%= link_to 'Edit', edit_client_loa_path(@client, @loa) %> |
-<%= link_to 'Destroy', [@client, @loa], method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'LOA List', client_loas_path %>
+<p>
+<input type="checkbox" disabled="true"<% unless @loa.agent == false %> checked="true" <% end %>> Agent<br />
+<input type="checkbox" disabled="true"<% unless @loa.internet_tracing == false %> checked="true" <% end %>> Internet Tracing<br />
+<input type="checkbox" disabled="true"<% unless @loa.voice_tracing == false %> checked="true" <% end %>> Voice Tracing<br />
+<input type="checkbox" disabled="true"<% unless @loa.customer_support == false %> checked="true" <% end %>> Customer Support<br />
+</p>
 
+<div class="nav">
+<p>
+  <b>TASKS:</b>
+  <%= link_to '[Edit]', edit_client_loa_path(@client, @loa) %>
+  <%= link_to '[Destroy]', [@client, @loa], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+
+<p>
+  <b>VIEWS:</b>
+  <%= link_to 'LOA List', client_loas_path %> |
+  <%= link_to 'Client Detail', client_path(@client) %>
+</p>
+</div>

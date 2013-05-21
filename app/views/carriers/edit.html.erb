@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @carrier %> |
-<%= link_to 'Back', carriers_path %>
+<div class="nav">
+<p>
+	<b>VIEWS:</b>
+	<%= link_to 'Carrier Detail', @carrier %> |
+	<%= link_to 'Carrier List', carriers_path %>
+</p>
+</div>

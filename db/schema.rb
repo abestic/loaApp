@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520234435) do
+ActiveRecord::Schema.define(:version => 20130521195429) do
 
   create_table "carriers", :force => true do |t|
     t.string   "code"
@@ -42,17 +42,45 @@ ActiveRecord::Schema.define(:version => 20130520234435) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.boolean  "active"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "title"
   end
 
   create_table "loas", :force => true do |t|
     t.integer  "carrier_id"
     t.date     "effective_date"
     t.date     "expiration_date"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.integer  "client_id"
     t.boolean  "active"
     t.string   "carrier_code"
+    t.string   "pdf"
+    t.boolean  "agent"
+    t.boolean  "internet_tracing"
+    t.boolean  "voice_tracing"
+    t.boolean  "customer_support"
+    t.boolean  "customer_417"
+    t.boolean  "error_824"
+    t.boolean  "ack_997"
+    t.boolean  "cancel_998"
+    t.boolean  "clm"
+    t.boolean  "interchange_receipt"
+    t.boolean  "bol_web"
+    t.boolean  "bol_edi"
+    t.boolean  "diversion"
+    t.boolean  "price_lookup"
+    t.boolean  "customer_contract"
+    t.boolean  "rate_negotiation"
+    t.boolean  "veiw_freight_inv"
+    t.boolean  "pay_freight_inv"
+    t.boolean  "dispute_freight_inv"
+    t.boolean  "view_incidental_inv"
+    t.boolean  "pay_incidental_inv"
+    t.boolean  "dispute_incidental_inv"
+    t.boolean  "switch_release"
+    t.boolean  "equipment_order"
   end
 
 end

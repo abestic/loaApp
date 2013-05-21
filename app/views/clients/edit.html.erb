@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @client %> |
-<%= link_to 'Client List', clients_path %>
+<div class="nav">
+<p>
+	<b>VIEWS:</b>
+	<%= link_to 'Client Details', @client %> |
+	<%= link_to 'Client List', clients_path %>
+</p>
+</div>

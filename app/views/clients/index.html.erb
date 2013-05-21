@@ -3,14 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Address 1</th>
+    <!--<th>Address 1</th>
     <th>Address 2</th>
     <th>City</th>
     <th>State</th>
     <th>Postal Code</th>
-
-    <th>Active?</th>
-    <!--<th>Active?</th>-->
+    <th>Active?</th>-->
     <th></th>
     <th></th>
     <th></th>
@@ -19,12 +17,12 @@
 <% @clients.each do |client| %>
   <tr <% if client.active == false %>class="inactive"<% end %>>
     <td><%= client.name %></td>
-    <td><%= client.address_1 %></td>
+    <!--<td><%= client.address_1 %></td>
     <td><%= client.address_2 %></td>
     <td><%= client.city %></td>
     <td><%= client.state %></td>
     <td><%= client.postal_code %></td>
-    <td><%= client.active %></td>
+    <td><%= client.active %></td>-->
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,4 +32,9 @@
 
 <br />
 
-<%= link_to 'New Client', new_client_path %>
+<div class="nav">
+<p>
+  <b>TASKS:</b>
+  <%= link_to '[New Client]', new_client_path %>
+</p>
+</div>

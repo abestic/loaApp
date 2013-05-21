@@ -21,28 +21,30 @@
 <p>
 
   <b>Valid LOAs:</b>
-  <% @loas.valid.each do |loa| %>
+  <% @loas.current.valid.each do |loa| %>
     <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
   <% end %>
 </p>
 
 <p>
   <b>Expired LOAs:</b>
-  <% @loas.expired.each do |loa| %>
+  <% @loas.current.expired.each do |loa| %>
   <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
   <% end %>
 </p>
 
-<p>
-  <b>VIEWS</b>
-  <%= link_to 'LOA List', client_loas_path(@client) %> |
-  <%= link_to 'Contact List', client_contacts_path(@client) %> |
-  <%= link_to 'Client List', clients_path %>
-</p>
-
+<div class="nav">
 <p>
   <b>TASKS:</b>
   <%= link_to '[Edit Client]', edit_client_path(@client) %>
   <%= link_to '[New Contact]', new_client_contact_path(@client) %>  
   <%= link_to '[New LOA]', new_client_loa_path(@client) %>
 </p>
+
+<p>
+  <b>VIEWS:</b>
+  <%= link_to 'LOA List', client_loas_path(@client) %> |
+  <%= link_to 'Contact List', client_contacts_path(@client) %> |
+  <%= link_to 'Client List', clients_path %>
+</p>
+</div>

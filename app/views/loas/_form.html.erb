@@ -28,9 +28,28 @@
     <%= f.date_select :expiration_date %>
   </div>
   <div>
-    <%= f.label :active %><br />
+    <%= f.label "PDF" %><br />
+    <%= f.file_field :pdf %>
+  </div>
+  <div><br />
+    <%= f.label :active %>
     <%= f.check_box :active %>
   </div>
+  <div>
+    <%= f.label :agent %>
+    <%= f.check_box :agent %>
+    <br />
+    <%= f.label :internet_tracing %>
+    <%= f.check_box :internet_tracing %>
+    <br />
+    <%= f.label :voice_tracing %>
+    <%= f.check_box :voice_tracing %>
+    <br />
+    <%= f.label :customer_support %>
+    <%= f.check_box :customer_support %>
+    <br />
+  </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>

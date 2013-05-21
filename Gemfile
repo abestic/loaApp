@@ -22,7 +22,9 @@ end
 
 gem 'jquery-rails'
 
-gem "carmen-rails", '~> 1.0.0'
+gem 'carmen-rails', '~> 1.0.0'
+
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

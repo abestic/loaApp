@@ -15,6 +15,14 @@
   <%= @carrier.active %>
 </p>
 
+<div class="nav">
+<p>
+	<b>TASKS:</b>
+	<%= link_to 'Edit Carrier', edit_carrier_path(@carrier) %>
+</p>
 
-<%= link_to 'Edit', edit_carrier_path(@carrier) %> |
-<%= link_to 'Back', carriers_path %>
+<p>
+	<b>VIEWS:</b>
+	<%= link_to 'Carrier List', carriers_path %>
+</p>
+</div>
