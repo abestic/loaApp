@@ -20,6 +20,7 @@
 </p>
 
 <p>
+<<<<<<< HEAD
   <b>Valid LOAs:</b>
   <% @loas.valid.each do |loa| %>
     <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
@@ -30,6 +31,16 @@
   <b>Expired LOAs:</b>
   <% @loas.expired.each do |loa| %>
   <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
+=======
+  <b>Postal Code:</b>
+  <%= @client.postal_code %>
+</p>
+
+<p>
+  <b>Active Contacts:</b>
+  <% @contacts.current.each do |contact| %>
+    <%= link_to contact.full_name, client_contact_path(@client, contact) %>
+>>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
   <% end %>
 </p>
 
@@ -40,6 +51,16 @@
   <%= link_to 'Client List', clients_path %>
 </p>
 
+<<<<<<< HEAD
+=======
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Client List', clients_path %> |
+<%= link_to 'Contact List', client_contacts_path(@client) %> |
+<%= link_to 'LOA List', client_loas_path(@client) %>
+
+>>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
 <p>
   <b>TASKS:</b>
   <%= link_to '[Edit Client]', edit_client_path(@client) %>

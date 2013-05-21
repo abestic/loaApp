@@ -26,5 +26,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_client_loa_path(@loa) %> |
-<%= link_to 'Back', client_loas_path %>
+<%= link_to 'Edit', edit_client_loa_path(@client, @loa) %> |
+<%= link_to 'Destroy', [@client, @loa], method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'LOA List', client_loas_path %>
+
