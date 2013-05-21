@@ -21,10 +21,7 @@ pre {
 a {
   color: blue;
   &:visited {
-
     color: #8800CC;
-
-    color: #8822FF;
   }
   &:hover {
     color: #fff;
@@ -78,6 +75,3 @@ div {
   color: red;
   background-color: pink;
 }
-
-.inactive {color: grey;}
-
