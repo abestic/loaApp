@@ -33,17 +33,6 @@
   <% end %>
 </p>
 
-  <b>Postal Code:</b>
-  <%= @client.postal_code %>
-</p>
-
-<p>
-  <b>Active Contacts:</b>
-  <% @contacts.current.each do |contact| %>
-    <%= link_to contact.full_name, client_contact_path(@client, contact) %>
-  <% end %>
-</p>
-
 <p>
   <b>VIEWS</b>
   <%= link_to 'LOA List', client_loas_path(@client) %> |
