@@ -16,8 +16,8 @@
     <%= select_tag(:client_id, options_for_select([[@client.name, @client.id]]) ) %>
   </div>
   <div class="field">
-    <%= f.label :carrier_id %><br />
-    <%= select(:loa, :carrier_id, Carrier.all.collect {|c| [c.name, c.id]}, {:prompt => true}) %>
+    <%= f.label "Carrier" %><br />
+    <%= select(:loa, :carrier_code, Carrier.all.collect {|c| [c.name, c.code]}, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :effective_date %><br />
@@ -26,6 +26,10 @@
   <div class="field">
     <%= f.label :expiration_date %><br />
     <%= f.date_select :expiration_date %>
+  </div>
+  <div>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
   </div>
   <div class="actions">
     <%= f.submit %>

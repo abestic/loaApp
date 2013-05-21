@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   
   before_filter :get_contact, :get_loa
-  skip_before_filter :get_contact, :get_loa, :only => [:index]
+  skip_before_filter :get_contact, :get_loa, :only => [:index, :new, :create]
 
 
   def get_contact

@@ -1,16 +1,16 @@
 class LoasController < ApplicationController
   
-  before_filter :get_client
+  before_filter :get_loa
 
-  def get_client
+  def get_loa
     @client = Client.find(params[:client_id])
+    @loas = @client.loas
   end
 
   # GET /loas
   # GET /loas.json
   def index
-    @loas = @client.loas
-    @carriers = Carrier.all
+    #@loas = @client.loas
 
     respond_to do |format|
       format.html # index.html.erb

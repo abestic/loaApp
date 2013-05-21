@@ -1,55 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @client.name %>
-</p>
-
-<p>
-  <b>Address 1:</b>
+  <b><%= @client.name %></b>
+  <br />
   <%= @client.address_1 %>
-</p>
+  <br />
+  <% unless @client.address_2.empty? %>
+  <%= @client.address_2 %><br />
+  <% end %>
+
+  <%= @client.city %>  <%= @client.state %>  <%= @client.postal_code %>
+
 
 <p>
-  <b>Address 2:</b>
-  <%= @client.address_2 %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @client.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @client.state %>
-</p>
-
-<p>
-  <b>Postal code:</b>
-  <%= @client.postal_code %>
-</p>
-
-<p>
-  <b>Contacts:</b>
-  <% @contacts.each do |contact| %>
+  <b>Active Contacts:</b>
+  <% @contacts.current.each do |contact| %>
     <%= link_to contact.full_name, client_contact_path(@client, contact) %>
   <% end %>
 </p>
 
 <p>
-  <b>LOAs:</b>
-  <% @loas.each do |loa| %>
-    <%= link_to loa.carrier_id, client_loa_path(@client, loa) %>
+  <b>Valid LOAs:</b>
+  <% @loas.valid.each do |loa| %>
+    <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
   <% end %>
 </p>
 
+<p>
+  <b>Expired LOAs:</b>
+  <% @loas.expired.each do |loa| %>
+  <%= link_to loa.carrier_code, client_loa_path(@client, loa) %>
+  <% end %>
+</p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<p>
+  <b>VIEWS</b>
+  <%= link_to 'LOA List', client_loas_path(@client) %> |
+  <%= link_to 'Contact List', client_contacts_path(@client) %> |
+  <%= link_to 'Client List', clients_path %>
+</p>
 
 <p>
   <b>TASKS:</b>
+  <%= link_to '[Edit Client]', edit_client_path(@client) %>
   <%= link_to '[New Contact]', new_client_contact_path(@client) %>  
   <%= link_to '[New LOA]', new_client_loa_path(@client) %>
 </p>

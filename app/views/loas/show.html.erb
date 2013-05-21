@@ -2,12 +2,12 @@
 
 <p>
   <b>Company:</b>
-  <%= @loa.client_id %>
+  <%= @client.name %>
 </p>
 
 <p>
   <b>Carrier:</b>
-  <%= @loa.carrier_id %>
+  <%= @loa.carrier_code %>
 </p>
 
 <p>
@@ -18,6 +18,11 @@
 <p>
   <b>Expiration date:</b>
   <%= @loa.expiration_date %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @loa.active %>
 </p>
 
 

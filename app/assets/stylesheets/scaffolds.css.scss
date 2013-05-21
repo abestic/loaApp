@@ -19,9 +19,9 @@ pre {
 }
 
 a {
-  color: #000;
+  color: blue;
   &:visited {
-    color: #666;
+    color: #8800CC;
   }
   &:hover {
     color: #fff;
@@ -66,4 +66,11 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.inactive {color: grey;}
+
+.expired {
+  color: red;
+  background-color: pink;
 }
