@@ -8,18 +8,15 @@
     <th>City</th>
     <th>State</th>
     <th>Postal Code</th>
-<<<<<<< HEAD
+
     <th>Active?</th>
-=======
     <!--<th>Active?</th>-->
->>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @clients.each do |client| %>
-<<<<<<< HEAD
   <tr <% if client.active == false %>class="inactive"<% end %>>
     <td><%= client.name %></td>
     <td><%= client.address_1 %></td>
@@ -32,20 +29,6 @@
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-=======
-    <tr <% if client.active == false %>class="inactive"<% end %>>
-        <td><%= client.name %></td>
-        <td><%= client.address_1 %></td>
-        <td><%= client.address_2 %></td>
-        <td><%= client.city %></td>
-        <td><%= client.state %></td>
-        <td><%= client.postal_code %></td>
-        <!--<td><%= client.active %></td>-->
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
->>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
 <% end %>
 </table>
 

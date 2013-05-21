@@ -11,11 +11,10 @@ class LoasController < ApplicationController
   # GET /loas
   # GET /loas.json
   def index
-<<<<<<< HEAD
     #@loas = @client.loas
-=======
+
     
->>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
+
 
     respond_to do |format|
       format.html # index.html.erb

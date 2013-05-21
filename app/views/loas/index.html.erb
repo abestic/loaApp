@@ -13,16 +13,9 @@
   </tr>
 
 <% @loas.each do |loa| %>
-<<<<<<< HEAD
   <tr <% if loa.active == false %>class="inactive"<% elsif loa.expiration_date < Date.today %>class="expired"<% end %>>
-    
-    <td><%= @client.name %></td>
-    <td><%= loa.carrier_code %></td>
-=======
-  <tr>
     <!--<td><%= @client.name %></td>-->
-    <td><%= loa.carrier_id %></td>
->>>>>>> b3fa5412edfd06d2797ae56d8f92e731db3bfdef
+    <td><%= loa.carrier_code %></td>
     <td><%= loa.effective_date %></td>
     <td><%= loa.expiration_date %></td>
     <td><%= loa.active %></td>
