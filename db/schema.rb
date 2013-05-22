@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522011401) do
+ActiveRecord::Schema.define(:version => 20130522154628) do
 
   create_table "carriers", :force => true do |t|
     t.string   "code"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130522011401) do
     t.boolean  "dispute_incidental_inv"
     t.boolean  "switch_release"
     t.boolean  "equipment_order"
+    t.boolean  "include_rmi"
   end
 
 end

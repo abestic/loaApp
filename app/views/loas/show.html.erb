@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Company:</b>
+  <b>Client:</b>
   <%= @client.name %>
 </p>
 
@@ -11,18 +11,20 @@
 </p>
 
 <p>
-  <b>Active:</b>
-  <%= @loa.active %>
-</p>
-
-<p>
-  <b>Effective date:</b>
+  <b>Effective Date:</b>
   <%= @loa.effective_date %>
 </p>
 
-<p <% if (@loa.active? && @loa.expiration_date < Date.today) %>class="expired_date" <% end %>>
-  <b>Expiration date:</b>
+<p class=<% if (@loa.active? && @loa.expiration_date < Date.today) %>"expired_date"<% end %>>
+  <b>Expiration Date:</b>
   <%= @loa.expiration_date %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <input type="checkbox" disabled="true"<% unless @loa.active == false %> checked="true" <% end %>> |
+  <b>RMI Included:</b>
+  <input type="checkbox" disabled="true"<% unless @loa.include_rmi == false %> checked="true" <% end %>>
 </p>
 
 <p>
@@ -64,7 +66,7 @@
       <input type="checkbox" disabled="true"<% unless @loa.ack_997 == false %> checked="true" <% end %>> 997 Acknowledgements<br />
       <input type="checkbox" disabled="true"<% unless @loa.cancel_998 == false %> checked="true" <% end %>> 998 Cancellations<br />
       <input type="checkbox" disabled="true"<% unless @loa.clm == false %> checked="true" <% end %>> CLMs<br />
-      <input type="checkbox" disabled="true"<% unless @loa.interchange_receipt == false %> checked="true" <% end %>> Interchange Reciept<br />
+      <input type="checkbox" disabled="true"<% unless @loa.interchange_receipt == false %> checked="true" <% end %>> Interchange Reciept (J-1)<br />
     </td>
     <td class="loa_details">
       <input type="checkbox" disabled="true"<% unless @loa.view_freight_inv == false %> checked="true" <% end %>> View Freight Invoices<br />
@@ -87,7 +89,7 @@
 </p>
 
 <p>
-  <b>VIEWS:</b>
+  <b>NAV:</b>
   <%= link_to 'LOA List', client_loas_path %> |
   <%= link_to 'Client Detail', client_path(@client) %>
 </p>
