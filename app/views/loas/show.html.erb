@@ -11,18 +11,18 @@
 </p>
 
 <p>
+  <b>Active:</b>
+  <%= @loa.active %>
+</p>
+
+<p>
   <b>Effective date:</b>
   <%= @loa.effective_date %>
 </p>
 
-<p <% if (@loa.active? && @loa.expiration_date < Date.today) %>class="expired"<% end %>>
+<p <% if (@loa.active? && @loa.expiration_date < Date.today) %>class="expired_date" <% end %>>
   <b>Expiration date:</b>
   <%= @loa.expiration_date %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%= @loa.active %>
 </p>
 
 <p>
@@ -30,12 +30,54 @@
   <%= link_to @loa.pdf_filename, @loa.pdf_url.to_s %>
 </p>
 
-<p>
-<input type="checkbox" disabled="true"<% unless @loa.agent == false %> checked="true" <% end %>> Agent<br />
-<input type="checkbox" disabled="true"<% unless @loa.internet_tracing == false %> checked="true" <% end %>> Internet Tracing<br />
-<input type="checkbox" disabled="true"<% unless @loa.voice_tracing == false %> checked="true" <% end %>> Voice Tracing<br />
-<input type="checkbox" disabled="true"<% unless @loa.customer_support == false %> checked="true" <% end %>> Customer Support<br />
-</p>
+<table>
+  <tr>
+    <th>Agency</th>
+    <th>Operations</th>
+  </tr>
+  <tr>
+    <td class="loa_details">
+      <input type="checkbox" disabled="true"<% unless @loa.agent == false %> checked="true" <% end %>> Agent<br />
+      <input type="checkbox" disabled="true"<% unless @loa.internet_tracing == false %> checked="true" <% end %>> Internet Tracing<br />
+      <input type="checkbox" disabled="true"<% unless @loa.voice_tracing == false %> checked="true" <% end %>> Voice Tracing<br />
+      <input type="checkbox" disabled="true"<% unless @loa.customer_support == false %> checked="true" <% end %>> Customer Support<br />
+      <input type="checkbox" disabled="true"<% unless @loa.price_lookup == false %> checked="true" <% end %>> Price Lookup<br />
+      <input type="checkbox" disabled="true"<% unless @loa.customer_contract == false %> checked="true" <% end %>> Customer Contracts<br />
+      <input type="checkbox" disabled="true"<% unless @loa.rate_negotiation == false %> checked="true" <% end %>> Rate Negotiations<br />
+    </td>
+    <td class="loa_details">
+      <input type="checkbox" disabled="true"<% unless @loa.bol_web == false %> checked="true" <% end %>> Bills of Lading (Web)<br />
+      <input type="checkbox" disabled="true"<% unless @loa.bol_edi == false %> checked="true" <% end %>> Bills of Lading (EDI)<br />
+      <input type="checkbox" disabled="true"<% unless @loa.diversion == false %> checked="true" <% end %>> Diversions<br />
+      <input type="checkbox" disabled="true"<% unless @loa.switch_release == false %> checked="true" <% end %>> Switches and Releases<br />
+      <input type="checkbox" disabled="true"<% unless @loa.equipment_order == false %> checked="true" <% end %>> Equipment Orders<br />
+    </td>
+  </tr>
+  <tr>
+    <th>Tracking</th>
+    <th>Invoices</th>
+  </tr>
+  <tr>
+    <td class="loa_details">
+      <input type="checkbox" disabled="true"<% unless @loa.customer_417 == false %> checked="true" <% end %>> Customer 417s<br />
+      <input type="checkbox" disabled="true"<% unless @loa.error_824 == false %> checked="true" <% end %>> 824 Errors<br />
+      <input type="checkbox" disabled="true"<% unless @loa.ack_997 == false %> checked="true" <% end %>> 997 Acknowledgements<br />
+      <input type="checkbox" disabled="true"<% unless @loa.cancel_998 == false %> checked="true" <% end %>> 998 Cancellations<br />
+      <input type="checkbox" disabled="true"<% unless @loa.clm == false %> checked="true" <% end %>> CLMs<br />
+      <input type="checkbox" disabled="true"<% unless @loa.interchange_receipt == false %> checked="true" <% end %>> Interchange Reciept<br />
+    </td>
+    <td class="loa_details">
+      <input type="checkbox" disabled="true"<% unless @loa.view_freight_inv == false %> checked="true" <% end %>> View Freight Invoices<br />
+      <input type="checkbox" disabled="true"<% unless @loa.pay_freight_inv == false %> checked="true" <% end %>> Pay Freight Invoices<br />
+      <input type="checkbox" disabled="true"<% unless @loa.dispute_freight_inv == false %> checked="true" <% end %>> Dispute Freight Invoices<br />
+      <input type="checkbox" disabled="true"<% unless @loa.view_incidental_inv == false %> checked="true" <% end %>> View Incidental Invoices<br />
+      <input type="checkbox" disabled="true"<% unless @loa.pay_incidental_inv == false %> checked="true" <% end %>> Pay Incidental Invoices<br />
+      <input type="checkbox" disabled="true"<% unless @loa.dispute_incidental_inv == false %> checked="true" <% end %>> Dispute Incidental Invoices<br/>
+    </td>
+  </tr>
+</table>
+
+<br />
 
 <div class="nav">
 <p>

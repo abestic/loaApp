@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521195429) do
+ActiveRecord::Schema.define(:version => 20130522011401) do
 
   create_table "carriers", :force => true do |t|
     t.string   "code"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20130521195429) do
     t.boolean  "price_lookup"
     t.boolean  "customer_contract"
     t.boolean  "rate_negotiation"
-    t.boolean  "veiw_freight_inv"
+    t.boolean  "view_freight_inv"
     t.boolean  "pay_freight_inv"
     t.boolean  "dispute_freight_inv"
     t.boolean  "view_incidental_inv"

@@ -12,43 +12,77 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %><br />
+    <%= f.label :client_id %>
     <%= select_tag(:client_id, options_for_select([[@client.name, @client.id]]) ) %>
   </div>
   <div class="field">
-    <%= f.label "Carrier" %><br />
+    <%= f.label "Carrier" %>
     <%= select(:loa, :carrier_code, Carrier.all.collect {|c| [c.name, c.code]}, {:prompt => true}) %>
   </div>
+  <div>
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div><br />
   <div class="field">
-    <%= f.label :effective_date %><br />
+    <%= f.label :effective_date %>
     <%= f.date_select :effective_date %>
   </div>
   <div class="field">
-    <%= f.label :expiration_date %><br />
+    <%= f.label :expiration_date %>
     <%= f.date_select :expiration_date %>
   </div>
-  <div>
-    <%= f.label "PDF" %><br />
+  <div><br />
+    <%= f.label "PDF" %>
     <%= f.file_field :pdf %>
   </div>
-  <div><br />
-    <%= f.label :active %>
-    <%= f.check_box :active %>
-  </div>
-  <div>
-    <%= f.label :agent %>
-    <%= f.check_box :agent %>
-    <br />
-    <%= f.label :internet_tracing %>
-    <%= f.check_box :internet_tracing %>
-    <br />
-    <%= f.label :voice_tracing %>
-    <%= f.check_box :voice_tracing %>
-    <br />
-    <%= f.label :customer_support %>
-    <%= f.check_box :customer_support %>
-    <br />
-  </div>
+  <br />
+  <table>
+    <tr>
+      <th>Agency</th>
+      <th>Operations</th>
+    </tr>
+    <tr>
+      <td class="loa_details">
+        <%= f.check_box :agent %> <%= f.label :agent %><br />
+        <%= f.check_box :internet_tracing %> <%= f.label :internet_tracing %><br />
+        <%= f.check_box :voice_tracing %> <%= f.label :voice_tracing %><br />
+        <%= f.check_box :customer_support %> <%= f.label :customer_support %><br />
+        <%= f.check_box :price_lookup %> <%= f.label :price_lookup %><br />
+        <%= f.check_box :customer_contract %> <%= f.label :customer_contract %><br />
+        <%= f.check_box :rate_negotiation %> <%= f.label :rate_negotiation %><br />
+      </td>
+      <td class="loa_details">
+        <%= f.check_box :bol_web %> <%= f.label :bol_web %><br />
+        <%= f.check_box :bol_edi %> <%= f.label :bol_edi %><br />
+        <%= f.check_box :diversion %> <%= f.label :diversion %><br />
+        <%= f.check_box :switch_release %> <%= f.label :switch_relesae %><br />
+        <%= f.check_box :equipment_order %> <%= f.label :equipment_order %><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Tracking</th>
+      <th>Invoices</th>
+    </tr>
+    <tr>
+      <td class="loa_details">
+        <%= f.check_box :customer_417 %> <%= f.label :customer_417 %><br />
+        <%= f.check_box :error_824 %> <%= f.label :error_824 %><br />
+        <%= f.check_box :ack_997 %> <%= f.label :ack_997 %><br />
+        <%= f.check_box :cancel_998 %> <%= f.label :cancel_998 %><br />
+        <%= f.check_box :clm %> <%= f.label :clm %><br />
+        <%= f.check_box :interchange_receipt %> <%= f.label :interchange_receipt %><br />
+      </td>
+      <td class="loa_details">
+        <%= f.check_box :view_freight_inv %> <%= f.label :view_freight_inv %><br />
+        <%= f.check_box :pay_freight_inv %> <%= f.label :pay_freight_inv %><br />
+        <%= f.check_box :dispute_freight_inv %> <%= f.label :dispute_freight_inv %><br />
+        <%= f.check_box :view_incidental_inv %> <%= f.label :view_incidental_inv %><br />
+        <%= f.check_box :pay_incidental_inv %> <%= f.label :pay_incidental_inv %><br />
+        <%= f.check_box :dispute_incidental_inv %> <%= f.label :dispute_incidental_inv %><br />
+      </td>
+    </tr>
+  </table>
+  
   <br />
   <div class="actions">
     <%= f.submit %>

@@ -76,8 +76,22 @@ div {
   background-color: pink;
 }
 
+.expired_date {
+  padding: 2px;
+  font-weight: bold;
+  color: red;
+  background-color: pink;
+  border: 2px solid red;
+  display: table;
+}
+
 .nav {
   width: 450px;
   border: 2px solid grey;
   background-color: #CCCCFF;
+}
+
+.loa_details {
+  vertical-align: top;
+  padding: 7px;
 }
