@@ -85,7 +85,7 @@ class LoasController < ApplicationController
     @loa.destroy
 
     respond_to do |format|
-      format.html { redirect_to loas_url }
+      format.html { redirect_to client_loas_url }
       format.json { head :no_content }
     end
   end
